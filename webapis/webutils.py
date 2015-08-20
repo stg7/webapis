@@ -4,7 +4,6 @@
 
     Copyright 2015-today
 
-    Project Task Track axiomatic reranking
     Author: Steve Göring
     Contact: stg7@gmx.de
 """
