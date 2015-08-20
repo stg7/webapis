@@ -14,6 +14,15 @@ First Start
 For some of the webservices you need API keys, that were configured in "webapis/api_keys.json" or
 can be setted in each instance with `set_api_key(KEY)`
 
+The easy way is to create the webapi/api_keys.json file with the following content:
+```
+{
+    "freebase": "KEY",
+    "chatnoir2": "dev",
+    "chatnoir": "KEY"
+}
+```
+
 Webservices
 -----------
 

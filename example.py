@@ -35,7 +35,6 @@ def main(args):
         print(e.__class__.__name__.lower())
         jPrint(e.get_by_query(query))
 
-    pass
 
 if __name__ == "__main__":
     main(sys.argv[1:])
