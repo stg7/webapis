@@ -28,7 +28,6 @@ class CachedRequester(object):
             raise Exception("you must set baseurl to a valid value in each subclass")
         cfg = self.__load_config()
         self.set_api_key(cfg.get(classname, ""))
-        jPrint(list(self.__cache.keys()))
 
     def __del__(self):
         if self.__cache is not None:
@@ -43,9 +42,6 @@ class CachedRequester(object):
         k = json.dumps(params,sort_keys=True) + baseurl
         if k in self.__cache:
             return self.__cache[k]
-        else:
-            print(k)
-            print("not cached")
 
         time.sleep(waittime)
         url_values = urllib.parse.urlencode(params)
