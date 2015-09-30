@@ -39,9 +39,9 @@ class CachedRequester(object):
     def _raw_request(self, params={}, baseurl="", waittime=0):
         if baseurl == "":
             baseurl = self._baseurl
-
-        if str(params) + baseurl in self.__cache:
-            return self.__cache[str(params) + baseurl]
+        k = json.dumps(params,sort_keys=True) + baseurl
+        if k in self.__cache:
+            return self.__cache[k]
 
         time.sleep(waittime)
         url_values = urllib.parse.urlencode(params)
@@ -57,18 +57,18 @@ class CachedRequester(object):
             content = str(handle.read().decode(encoding, errors='ignore'))
 
         result = ' '.join(content.split())
-        self.__cache[str(params) + baseurl] = result
+        self.__cache[k] = result
 
         return result
 
-    def _request(self, params={}, baseurl=""):
+    def _request(self, params={}, baseurl="", waittime=0):
         """
         do a rest request and parse json result
         """
         if None in params.values() or len(params) == 0:
             return {}
 
-        result = self._raw_request(params, baseurl)
+        result = self._raw_request(params, baseurl, waittime)
 
         return json.loads(result)
 

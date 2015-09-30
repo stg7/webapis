@@ -40,8 +40,7 @@ class Chatnoir2(CachedRequester):
         :index index that should be used, possible values:
             "webis_clueweb12", "webis_clueweb09" or "webis_clueweb12,webis_clueweb09"
         """
-        time.sleep(1)
-        return self._request({"q": query, "i": index, "apiKey": self._api_key, "size": size}, self.__chatnoir2searchurl)
+        return self._request({"q": query, "i": index, "apiKey": self._api_key, "size": size}, self.__chatnoir2searchurl, 1)
 
     def __get_raw_document_by_internal_id(self, docid, index="webis_clueweb12"):
         """
@@ -55,13 +54,13 @@ class Chatnoir2(CachedRequester):
         """
         return self.__get_raw_document_by_internal_id(self.__get_internal_id(docid, index))
 
-    def get_results_by_query(self, query, index="webis_clueweb12", size=10):
+    def get_results_by_query(self, query, index="webis_clueweb12", size=50):
         """
         :query
         :index index that should be used, possible values:
             "webis_clueweb12", "webis_clueweb09" or "webis_clueweb12,webis_clueweb09"
         """
-        res = self.get_by_query(query, index, 50)
+        res = self.get_by_query(query, index, size)
         return [r["trec_id"] for r in res["results"]]
 
 

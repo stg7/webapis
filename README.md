@@ -27,7 +27,7 @@ Webservices
 -----------
 
 * [chatnoir](http://chatnoir.webis.de) & chatnoir2 (non public)
-* [freebase](https://www.freebase.com/) & [wikidata](https://www.wikidata.org: semantic web search requests
+* [freebase](https://www.freebase.com/) & [wikidata](https://www.wikidata.org): semantic web search requests
 * [google](https://google.com): google search scraped form html page
 * [netspeak](http://netspeak.org): ngram queries
 * [querysegmentation](http://webis16.medien.uni-weimar.de:8080/query-segmentation-server/): segments queries
