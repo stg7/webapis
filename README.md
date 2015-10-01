@@ -31,7 +31,9 @@ Webservices
 * [google](https://google.com): google search scraped form html page
 * [netspeak](http://netspeak.org): ngram queries
 * [querysegmentation](http://webis16.medien.uni-weimar.de:8080/query-segmentation-server/): segments queries
-* [whatismyip](https://www.whatismyip.com/)
+* [whatismyip](https://www.whatismyip.com/): get external ip address
+* [randomorg](http://www.random.org/): get a true random number
+
 
 Example run
 -----------
