@@ -11,10 +11,10 @@ A few web api tools for search request to different webservices. All request wil
 
 First Start
 -----------
-For some of the webservices you need API keys, that were configured in "webapis/api_keys.json" or
+For some of the webservices you need API keys, that were configured in `api_keys.json` or
 can be setted in each instance with `set_api_key(KEY)`
 
-The easy way is to create the webapi/api_keys.json file with the following content:
+The easy way is to create the `api_keys.json` file with the following content, you can use `api_keys.json.example`:
 ```
 {
     "freebase": "KEY",
@@ -31,6 +31,7 @@ Webservices
 * [google](https://google.com): google search scraped form html page
 * [netspeak](http://netspeak.org): ngram queries
 * [querysegmentation](http://webis16.medien.uni-weimar.de:8080/query-segmentation-server/): segments queries
+* [whatismyip](https://www.whatismyip.com/)
 
 Example run
 -----------

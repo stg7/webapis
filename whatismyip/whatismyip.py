@@ -23,7 +23,7 @@ from webutils import lInfo
 
 class Whatismyip(CachedRequester):
     """
-
+    get your current external ip adress
     """
     _baseurl = "http://whatismyip.org/"
 
