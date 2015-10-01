@@ -12,8 +12,6 @@ import sys
 import os
 import argparse
 import json
-import urllib.request
-import shelve
 
 sys.path.insert(0, os.path.dirname(__file__) + '/..')
 from webutils import CachedRequester
@@ -51,10 +49,6 @@ def main(params):
 
     wikidata = Wikidata()
 
-    def topic_sim(a, b):
-        if a == b:
-            return 1
-        return 42
     lInfo("ok")
     entity = "bathroom".lower()
     query = "choose bathroom".lower()
@@ -70,12 +64,6 @@ def main(params):
         related_terms[k] = 1
         #print([x["label"],x.get("description", ""), x["id"]])
 
-    # measure topic similarity between all pairs of related querys
-    for k in sorted(related_terms.keys()):
-        for j in sorted(related_terms.keys()):
-            topic_sim(k, j)
-
-
     print(len(related_terms))
 
     for k in sorted(related_terms.keys()):
@@ -83,13 +71,11 @@ def main(params):
 
     print(json.dumps(wikidata.get_related(entity), indent=4, sort_keys=True))
 
-
     query = "solar power home"
     entity = "solar power"
     mid = "/m/05t0ydv"
     print((query, entity, mid))
     print(json.dumps(wikidata.get_related(query, entity, mid), indent=4, sort_keys=True))
-
 
 
 if __name__ == "__main__":

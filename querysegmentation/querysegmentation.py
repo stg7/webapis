@@ -12,8 +12,6 @@ import sys
 import os
 import argparse
 import json
-import urllib.request
-import shelve
 
 sys.path.insert(0, os.path.dirname(__file__) + '/..')
 from webutils import CachedRequester
