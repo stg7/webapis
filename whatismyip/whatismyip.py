@@ -28,7 +28,7 @@ class Whatismyip(CachedRequester):
     _baseurl = "http://whatismyip.org/"
 
     def get(self):
-        res = self._raw_request({})
+        res = self._raw_request({}, use_cache=False)
         return re.findall("[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+", res)[0]
 
 

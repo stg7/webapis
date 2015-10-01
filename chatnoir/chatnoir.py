@@ -17,10 +17,12 @@ import shelve
 
 sys.path.insert(0, os.path.dirname(__file__) + '/..')
 from webutils import CachedRequester
-from webutils import lInfo, jPrint
-sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)) + "/../html2text-2014.9.25.zip")
+from webutils import lInfo
+from webutils import jPrint
+from webutils import cleanhtml
 
-import html2text
+# sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)) + "/../html2text-2014.9.25.zip")
+# import html2text
 
 
 class Chatnoir(CachedRequester):
@@ -41,7 +43,7 @@ class Chatnoir(CachedRequester):
         docid is the internal docid of chatnoir2
         """
         html = self._raw_request({"id": docid, "token": self._api_key}, self.__docurl)
-        return {"raw": html2text.html2text(html)}
+        return {"raw": cleanhtml(html)} # html2text.html2text(html)}
 
     def __to_longid(self, docid):
         return str(int(docid.replace("clueweb09-", "")[2:].replace("-", "")))

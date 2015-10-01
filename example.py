@@ -11,12 +11,12 @@
 import os
 import sys
 
-from webapis.webutils import jPrint
-from webapis.webutils import lInfo
+from webutils import jPrint
+from webutils import lInfo
 
-from webapis.wikidata import wikidata
-from webapis.querysegmentation import querysegmentation
-from webapis.google import google
+from wikidata import wikidata
+from querysegmentation import querysegmentation
+from google import google
 
 from wikidata import *
 from querysegmentation import *

@@ -36,11 +36,11 @@ class CachedRequester(object):
     def set_api_key(self, api_key):
         self._api_key = api_key
 
-    def _raw_request(self, params={}, baseurl="", waittime=0):
+    def _raw_request(self, params={}, baseurl="", waittime=0, use_cache=True):
         if baseurl == "":
             baseurl = self._baseurl
-        k = json.dumps(params,sort_keys=True) + baseurl
-        if k in self.__cache:
+        k = json.dumps(params, sort_keys=True) + baseurl
+        if k in self.__cache and use_cache:
             return self.__cache[k]
 
         time.sleep(waittime)
@@ -57,7 +57,8 @@ class CachedRequester(object):
             content = str(handle.read().decode(encoding, errors='ignore'))
 
         result = ' '.join(content.split())
-        self.__cache[k] = result
+        if use_cache:
+            self.__cache[k] = result
 
         return result
 

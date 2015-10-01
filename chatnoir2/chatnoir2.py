@@ -22,7 +22,7 @@ from webutils import lInfo
 
 
 class Chatnoir2(CachedRequester):
-    _baseurl = "http://webis8:8080"
+    _baseurl = "http://webis8.medien.uni-weimar.de:8080"
     __chatnoir2searchurl = _baseurl + "/api/_simple?"
     __chatnoir2rawdocurl = _baseurl + "/cache?"
 

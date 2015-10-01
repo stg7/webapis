@@ -19,7 +19,9 @@ import random
 
 sys.path.insert(0, os.path.dirname(__file__) + '/..')
 from webutils import CachedRequester
-from webutils import lInfo, jPrint, cleanhtml
+from webutils import lInfo
+from webutils import jPrint
+from webutils import cleanhtml
 
 
 class GoogleAPI(CachedRequester):
